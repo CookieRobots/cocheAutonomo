@@ -1,11 +1,9 @@
 /* 
- *  Coche
+ *  Coche con movimientos preprogramados
  *  
  *  
 */
 #include <Servo.h>
-
-
 
 
 //constantes del SERVO
@@ -21,12 +19,11 @@ int IN3 = 12;    // Input3 conectada al pin 12
 int IN4 = 10;    // Input4 conectada al pin 10
 int ENB = 11;    // ENB conectada al pin 11 de Arduino para PWM
 
-Servo direccion;  // create servo object to control a servo
-// twelve servo objects can be created on most boards
-int pos = CENTRO;    // variable to store the servo position
+Servo direccion;  // crea el objeto direccion de la clase Servo
+int pos = CENTRO;    // variable para almacenar la posicion del servo
 
 void setup() {
-  direccion.attach(3);  // attaches the servo on pin 9 to the servo object
+  direccion.attach(3);  // El servo está conectado al pin 3
   pinMode (ENB, OUTPUT); 
   pinMode (IN3, OUTPUT);
   pinMode (IN4, OUTPUT);
@@ -60,21 +57,6 @@ void loop() {
    freno();
   delay(TIEMPO*200);
   
-
-  /*
-  for (pos = MIN; pos <= MAX; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    direccion.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(tiempo);                       // waits 15ms for the servo to reach the position
-  }
-    delay(500);
-
-  for (pos = MAX; pos >= MIN; pos -= 1) { // goes from 180 degrees to 0 degrees
-    direccion.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(tiempo);                       // waits 15ms for the servo to reach the position
-  }
-      delay(500);
-*/
 }
 
 
